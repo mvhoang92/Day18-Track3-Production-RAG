@@ -1,8 +1,49 @@
+# Environment
 .env
-.DS_Store
+.env.*
+!.env.example
+
+# Python
 __pycache__/
-*.pyc
-.pytest_cache/
-qdrant_data/
+*.py[cod]
+*.pyo
+*.pyd
 *.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.xml
+
+# IDE
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Qdrant
+qdrant_data/
+
+# Reports (auto-generated)
 reports/*.json
+
+# Models cache (large files)
+.cache/
+*.bin
+*.safetensors
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb

@@ -1,3 +1,82 @@
 [
-  {"question": "hihi cả nhà tự tạo testset bằng cơm nhé", "ground_truth": "Không kịp tạo luôn"},
+  {
+    "question": "Dữ liệu cá nhân nhạy cảm bao gồm những loại nào?",
+    "ground_truth": "Dữ liệu cá nhân nhạy cảm bao gồm quan điểm chính trị, tôn giáo, tình trạng sức khỏe, nguồn gốc chủng tộc, dữ liệu sinh trắc học, dữ liệu về đời sống tình dục, dữ liệu tội phạm và dữ liệu tài chính cá nhân."
+  },
+  {
+    "question": "Chủ thể dữ liệu có những quyền gì theo Nghị định 13/2023?",
+    "ground_truth": "Chủ thể dữ liệu có 10 quyền: quyền biết, quyền đồng ý, quyền truy cập, quyền rút lại sự đồng ý, quyền xóa dữ liệu, quyền hạn chế xử lý, quyền cung cấp dữ liệu, quyền phản đối xử lý, quyền khiếu nại tố cáo, và quyền yêu cầu bồi thường thiệt hại."
+  },
+  {
+    "question": "Điều kiện để chuyển dữ liệu cá nhân ra nước ngoài là gì?",
+    "ground_truth": "Việc chuyển dữ liệu cá nhân ra nước ngoài phải đáp ứng: chủ thể dữ liệu được thông báo và đồng ý, bên nhận phải đảm bảo mức độ bảo vệ tương đương, phải thực hiện đánh giá tác động, và hồ sơ đánh giá phải nộp cho Bộ Công an trước khi chuyển."
+  },
+  {
+    "question": "Mức phạt tối đa khi vi phạm quy định bảo vệ dữ liệu cá nhân là bao nhiêu?",
+    "ground_truth": "Mức phạt vi phạm hành chính tối đa là 5% tổng doanh thu tại Việt Nam của năm tài chính liền trước năm vi phạm."
+  },
+  {
+    "question": "Khi nào cần thực hiện đánh giá tác động xử lý dữ liệu cá nhân?",
+    "ground_truth": "Cần đánh giá tác động khi xử lý dữ liệu cá nhân nhạy cảm, xử lý dữ liệu của trẻ em, xử lý dữ liệu trên quy mô lớn, hoặc sử dụng công nghệ mới có thể gây rủi ro cao."
+  },
+  {
+    "question": "Sự đồng ý của chủ thể dữ liệu có thể được thể hiện bằng những hình thức nào?",
+    "ground_truth": "Sự đồng ý có thể được thực hiện bằng văn bản, giọng nói, đánh dấu vào ô đồng ý, cú pháp đồng ý qua tin nhắn, chọn các thiết lập kỹ thuật đồng ý hoặc qua hành động khác thể hiện điều này."
+  },
+  {
+    "question": "Bảng cân đối kế toán gồm những thành phần nào?",
+    "ground_truth": "Bảng cân đối kế toán gồm Tài sản (tài sản ngắn hạn và tài sản dài hạn) và Nguồn vốn (nợ phải trả và vốn chủ sở hữu). Công thức: Tài sản = Nợ phải trả + Vốn chủ sở hữu."
+  },
+  {
+    "question": "ROE là gì và cách tính như thế nào?",
+    "ground_truth": "ROE (Return on Equity) là tỷ suất lợi nhuận trên vốn chủ sở hữu, tính bằng Lợi nhuận sau thuế chia cho Vốn chủ sở hữu bình quân nhân 100%."
+  },
+  {
+    "question": "Ba dòng tiền chính trong báo cáo lưu chuyển tiền tệ là gì?",
+    "ground_truth": "Ba dòng tiền chính là: dòng tiền từ hoạt động kinh doanh (CFO), dòng tiền từ hoạt động đầu tư (CFI), và dòng tiền từ hoạt động tài chính (CFF)."
+  },
+  {
+    "question": "Hệ số thanh toán hiện hành được tính như thế nào và mức nào là tốt?",
+    "ground_truth": "Hệ số thanh toán hiện hành = Tài sản ngắn hạn / Nợ ngắn hạn. Mức tốt là lớn hơn 2, chấp nhận được là từ 1 đến 2, cảnh báo khi nhỏ hơn 1."
+  },
+  {
+    "question": "P/E ratio là gì?",
+    "ground_truth": "P/E (Price to Earnings) = Giá cổ phiếu / EPS. P/E thấp có thể cho thấy cổ phiếu đang rẻ, P/E cao phản ánh kỳ vọng tăng trưởng cao hoặc cổ phiếu đang đắt."
+  },
+  {
+    "question": "Lợi nhuận gộp được tính như thế nào?",
+    "ground_truth": "Lợi nhuận gộp = Doanh thu thuần - Giá vốn hàng bán."
+  },
+  {
+    "question": "Nghị định 13/2023 áp dụng cho những đối tượng nào?",
+    "ground_truth": "Nghị định áp dụng cho cơ quan, tổ chức, cá nhân Việt Nam và cơ quan, tổ chức, cá nhân nước ngoài trực tiếp tham gia hoặc có liên quan đến hoạt động xử lý dữ liệu cá nhân tại Việt Nam."
+  },
+  {
+    "question": "Dữ liệu cá nhân cơ bản bao gồm những thông tin gì?",
+    "ground_truth": "Dữ liệu cá nhân cơ bản bao gồm họ tên, ngày tháng năm sinh, giới tính, nơi sinh, quê quán, quốc tịch, hình ảnh, số điện thoại, số CMND/CCCD, số hộ chiếu, địa chỉ email, địa chỉ nhà ở, thông tin về mối quan hệ cá nhân."
+  },
+  {
+    "question": "Doanh nghiệp khỏe mạnh thường có đặc điểm gì về dòng tiền?",
+    "ground_truth": "Doanh nghiệp khỏe mạnh thường có CFO dương (tạo tiền từ kinh doanh), CFI âm (đầu tư mở rộng), và CFF linh hoạt tùy chiến lược."
+  },
+  {
+    "question": "EPS là gì?",
+    "ground_truth": "EPS (Earnings Per Share) là lợi nhuận trên mỗi cổ phiếu, tính bằng Lợi nhuận sau thuế chia cho Số cổ phiếu lưu hành bình quân."
+  },
+  {
+    "question": "Bộ báo cáo tài chính đầy đủ gồm những báo cáo nào?",
+    "ground_truth": "Bộ báo cáo tài chính đầy đủ gồm 4 báo cáo: Bảng cân đối kế toán, Báo cáo kết quả hoạt động kinh doanh, Báo cáo lưu chuyển tiền tệ, và Thuyết minh báo cáo tài chính."
+  },
+  {
+    "question": "Hệ số nợ bao nhiêu là an toàn?",
+    "ground_truth": "Hệ số nợ = Tổng nợ / Tổng tài sản. Thấp hơn 0.5 là an toàn, cao hơn 0.7 là rủi ro cao."
+  },
+  {
+    "question": "Xử lý dữ liệu cá nhân là gì theo Nghị định 13/2023?",
+    "ground_truth": "Xử lý dữ liệu cá nhân là một hoặc nhiều hoạt động tác động tới dữ liệu cá nhân như thu thập, ghi, phân tích, xác nhận, lưu trữ, chỉnh sửa, công khai, kết hợp, truy cập, truy xuất, thu hồi, mã hóa, giải mã, sao chép, chia sẻ, truyền đưa, cung cấp, chuyển giao, xóa, hủy dữ liệu cá nhân."
+  },
+  {
+    "question": "Biên lợi nhuận gộp được tính như thế nào?",
+    "ground_truth": "Biên lợi nhuận gộp (Gross Margin) = Lợi nhuận gộp / Doanh thu thuần × 100%."
+  }
 ]
