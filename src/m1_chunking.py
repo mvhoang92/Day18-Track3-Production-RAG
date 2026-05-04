@@ -78,7 +78,7 @@ def chunk_semantic(text: str, threshold: float = SEMANTIC_THRESHOLD,
     if not sentences:
         return []
 
-    # 2. Encode sentences bằng sentence-transformers (model nhỏ, nhanh)
+    # 2. Use sentence-transformers for semantic chunking
     from sentence_transformers import SentenceTransformer
     import numpy as np
 
@@ -99,7 +99,6 @@ def chunk_semantic(text: str, threshold: float = SEMANTIC_THRESHOLD,
     for i in range(1, len(sentences)):
         sim = cosine_sim(embeddings[i - 1], embeddings[i])
         if sim < threshold:
-            # Similarity thấp → bắt đầu chunk mới
             chunks.append(Chunk(
                 text=" ".join(current_group),
                 metadata={**metadata, "chunk_index": len(chunks), "strategy": "semantic"},
@@ -107,7 +106,6 @@ def chunk_semantic(text: str, threshold: float = SEMANTIC_THRESHOLD,
             current_group = []
         current_group.append(sentences[i])
 
-    # Đừng quên nhóm cuối cùng
     if current_group:
         chunks.append(Chunk(
             text=" ".join(current_group),

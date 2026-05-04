@@ -1,0 +1,91 @@
+{
+  "aggregate": {
+    "faithfulness": 0.9051923076923079,
+    "answer_relevancy": NaN,
+    "context_precision": 0.9249999999441666,
+    "context_recall": 0.9318181818181819
+  },
+  "num_questions": 20,
+  "failures": [
+    {
+      "question": "Dữ liệu cá nhân nhạy cảm bao gồm những loại nào?",
+      "worst_metric": "context_precision",
+      "score": 0.0,
+      "avg_score": NaN,
+      "diagnosis": "Too many irrelevant chunks",
+      "suggested_fix": "Add reranking or metadata filtering to improve precision"
+    },
+    {
+      "question": "Chủ thể dữ liệu có những quyền gì theo Nghị định 13/2023?",
+      "worst_metric": "context_recall",
+      "score": 0.6363636363636364,
+      "avg_score": NaN,
+      "diagnosis": "Missing relevant chunks",
+      "suggested_fix": "Improve chunking strategy or add BM25 to hybrid search"
+    },
+    {
+      "question": "Điều kiện để chuyển dữ liệu cá nhân ra nước ngoài là gì?",
+      "worst_metric": "context_precision",
+      "score": 0.9999999999666667,
+      "avg_score": NaN,
+      "diagnosis": "Context precision adequate",
+      "suggested_fix": "No fix needed"
+    },
+    {
+      "question": "Mức phạt tối đa khi vi phạm quy định bảo vệ dữ liệu cá nhân là bao nhiêu?",
+      "worst_metric": "context_precision",
+      "score": 0.49999999995,
+      "avg_score": NaN,
+      "diagnosis": "Too many irrelevant chunks",
+      "suggested_fix": "Add reranking or metadata filtering to improve precision"
+    },
+    {
+      "question": "Khi nào cần thực hiện đánh giá tác động xử lý dữ liệu cá nhân?",
+      "worst_metric": "faithfulness",
+      "score": 0.75,
+      "avg_score": NaN,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature, or add context grounding"
+    },
+    {
+      "question": "Sự đồng ý của chủ thể dữ liệu có thể được thể hiện bằng những hình thức nào?",
+      "worst_metric": "context_precision",
+      "score": 0.9999999999666667,
+      "avg_score": NaN,
+      "diagnosis": "Context precision adequate",
+      "suggested_fix": "No fix needed"
+    },
+    {
+      "question": "Bảng cân đối kế toán gồm những thành phần nào?",
+      "worst_metric": "faithfulness",
+      "score": 0.2,
+      "avg_score": NaN,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Tighten prompt, lower temperature, or add context grounding"
+    },
+    {
+      "question": "ROE là gì và cách tính như thế nào?",
+      "worst_metric": "context_precision",
+      "score": 0.9999999999,
+      "avg_score": NaN,
+      "diagnosis": "Context precision adequate",
+      "suggested_fix": "No fix needed"
+    },
+    {
+      "question": "Ba dòng tiền chính trong báo cáo lưu chuyển tiền tệ là gì?",
+      "worst_metric": "context_precision",
+      "score": 0.9999999999666667,
+      "avg_score": NaN,
+      "diagnosis": "Context precision adequate",
+      "suggested_fix": "No fix needed"
+    },
+    {
+      "question": "Hệ số thanh toán hiện hành được tính như thế nào và mức nào là tốt?",
+      "worst_metric": "context_precision",
+      "score": 0.9999999999,
+      "avg_score": NaN,
+      "diagnosis": "Context precision adequate",
+      "suggested_fix": "No fix needed"
+    }
+  ]
+}

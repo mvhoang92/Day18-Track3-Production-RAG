@@ -37,10 +37,9 @@ class BM25Search:
 
     def index(self, chunks: list[dict]) -> None:
         """Build BM25 index từ danh sách chunks."""
-        from rank_bm25 import BM25Okapi
-
         self.documents = chunks
-        # Segment từng chunk → tokenize thành list of words
+
+        from rank_bm25 import BM25Okapi
         self.corpus_tokens = [
             segment_vietnamese(chunk["text"]).split()
             for chunk in chunks
@@ -49,21 +48,19 @@ class BM25Search:
 
     def search(self, query: str, top_k: int = BM25_TOP_K) -> list[SearchResult]:
         """Tìm kiếm bằng BM25."""
-        if self.bm25 is None or not self.documents:
+        if not self.documents:
             return []
 
-        # Segment query trước khi tìm kiếm
         tokenized_query = segment_vietnamese(query).split()
-        scores = self.bm25.get_scores(tokenized_query)
+        bm25_scores = self.bm25.get_scores(tokenized_query)
 
-        # Lấy top-k indices theo score giảm dần
-        top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
+        top_indices = sorted(range(len(bm25_scores)), key=lambda i: bm25_scores[i], reverse=True)[:top_k]
 
         results = []
         for idx in top_indices:
             results.append(SearchResult(
                 text=self.documents[idx]["text"],
-                score=float(scores[idx]),
+                score=float(bm25_scores[idx]),
                 metadata=self.documents[idx].get("metadata", {}),
                 method="bm25",
             ))
@@ -81,7 +78,7 @@ class DenseSearch:
         """Lazy load encoder để tránh load model khi không cần."""
         if self._encoder is None:
             from sentence_transformers import SentenceTransformer
-            self._encoder = SentenceTransformer(EMBEDDING_MODEL)
+            self._encoder = SentenceTransformer(EMBEDDING_MODEL)  # BAAI/bge-m3 -> 1024 dim
         return self._encoder
 
     def index(self, chunks: list[dict], collection: str = COLLECTION_NAME) -> None:
@@ -117,15 +114,15 @@ class DenseSearch:
         query_vector = self._get_encoder().encode(query).tolist()
 
         # Tìm kiếm trong Qdrant
-        hits = self.client.search(
+        hits = self.client.query_points(
             collection_name=collection,
-            query_vector=query_vector,
+            query=query_vector,
             limit=top_k,
-        )
+        ).points
 
         return [
             SearchResult(
-                text=hit.payload["text"],
+                text=hit.payload.get("text", ""),
                 score=hit.score,
                 metadata={k: v for k, v in hit.payload.items() if k != "text"},
                 method="dense",

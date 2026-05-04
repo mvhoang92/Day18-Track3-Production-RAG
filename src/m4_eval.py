@@ -53,13 +53,13 @@ def evaluate_ragas(
         )
         from datasets import Dataset
 
-        # Create dataset
+        # Create dataset (RAGAS 0.4.x uses user_input/response/retrieved_contexts/reference)
         dataset = Dataset.from_dict(
             {
-                "question": questions,
-                "answer": answers,
-                "contexts": contexts,
-                "ground_truth": ground_truths,
+                "user_input": questions,
+                "response": answers,
+                "retrieved_contexts": contexts,
+                "reference": ground_truths,
             }
         )
 
@@ -89,12 +89,12 @@ def evaluate_ragas(
         for _, row in df.iterrows():
             per_question.append(
                 EvalResult(
-                    question=row["question"],
-                    answer=row["answer"],
-                    contexts=row["contexts"]
-                    if isinstance(row["contexts"], list)
-                    else [row["contexts"]],
-                    ground_truth=row["ground_truth"],
+                    question=row["user_input"],
+                    answer=row["response"],
+                    contexts=row["retrieved_contexts"]
+                    if isinstance(row["retrieved_contexts"], list)
+                    else [row["retrieved_contexts"]],
+                    ground_truth=row["reference"],
                     faithfulness=float(row["faithfulness"]),
                     answer_relevancy=float(row["answer_relevancy"]),
                     context_precision=float(row["context_precision"]),
